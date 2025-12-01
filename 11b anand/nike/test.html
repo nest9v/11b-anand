@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+  </head>
+  <body class="bg-black">
+    <div class="bg-gray-600 w-full">
+        <div class=" p-4 flex justify-between items-center">
+<img class="cursor-pointer h-20 w-20 object-cover rounded-[100%]" src="https://media.licdn.com/dms/image/C4E0BAQFaN6NBC7nogw/company-logo_200_200/0/1674530276067?e=2147483647&v=beta&t=Ouitcl-t0lY1Pn6llWdg3M7CS9xfAmyiuMQ1B3VfP_s" alt="logo">
+       <ul class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 cursor-pointer text-white flex gap-4 text-[12px] font-semibold">
+        <button class=" cursor-pointer bg-pink-600 rounded px-4 text-[20px]"><i class="ri-shopping-cart-2-fill px-2"></i>Cart</button>
+        <button class=" cursor-pointer bg-pink-600 rounded px-4 text-[20px]"><i class="ri-account-circle-line px-2"></i>Бүртгүүлэх</button>
+       </ul>
+</div>
+    </div>
+
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-6 justify-items-center">
+      <div>
+        <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png" class="object-cover w-64 rounded-t-lg" alt="">
+        <div class="bg-gray-500 h-40 w-64 rounded-b-lg p-6">
+          <h3 class="font-semibold mb-3 text-white">Nike Dunk High By You Custom Men's Shoes</h3>
+          <p class="text-black text-sm">$160</p>
+          <button id="openModal" class=" cursor-pointer bg-pink-600 rounded px-4 text-[20px]"><i class="ri-shopping-cart-2-fill px-2"></i>View</button>
+        </div>
+      </div>
+       </div>
+
+<div id="pModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white h-[550px] rounded-2xl shadow-xl p-6 relative">
+          <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-black">
+      &times;
+    </button>
+          <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/99486859-0ff3-46b4-949b-2d16af2ad421/custom-nike-dunk-high-by-you-shoes.png" alt="Nike Dunk High" class="w-full h-96 object-cover rounded-xl">
+          <h2 class="text-2xl font-bold mt-4">Nike Dunk High</h2>
+          <p class="text-gray-700 mt-2">This is the custom Nike Dunk High. Designed to fit your style!</p>
+          <p class="text-gray-600 mt-2">$160</p>
+        </div>
+    </div>
+
+  <script>
+  const modal = document.getElementById('pModal');
+  const openModal = document.getElementById('openModal');
+  const closeModal = document.getElementById('closeModal');
+
+  openModal.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+
+</script>
+
+  </body>
+</html>

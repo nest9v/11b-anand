@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>JS бодлогууд</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      background: #f2f4f7;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 450px;
+      background: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .card {
+      background: #fafafa;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      border: 1px solid #ddd;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input {
+      width: 90px;
+      padding: 6px 8px;
+      margin-right: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 7px 15px;
+      background: #4a8df6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #2769e6;
+    }
+
+    .result {
+      margin-left: 10px;
+      font-weight: bold;
+      color: #222;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>JS Бодлогууд</h2>
+
+    <div class="card">
+      <label>Их тоо:</label>
+      <input type="number" id="a1">
+      <input type="number" id="a2">
+      <button onclick="maxTwo()">Бодох</button>
+      <span class="result" id="r1"></span>
+    </div>
+
+    <div class="card">
+      <label>Дундаж:</label>
+      <input type="number" id="b1">
+      <input type="number" id="b2">
+      <input type="number" id="b3">
+      <button onclick="avgThree()">Бодох</button>
+      <span class="result" id="r2"></span>
+    </div>
+
+    <div class="card">
+      <label>Анхны тоо:</label>
+      <input type="number" id="c1">
+      <button onclick="checkPrime()">Шалгах</button>
+      <span class="result" id="r3"></span>
+    </div>
+
+    <div class="card">
+      <label>Палиндром:</label>
+      <input type="number" id="d1">
+      <button onclick="checkPalindrome()">Шалгах</button>
+      <span class="result" id="r4"></span>
+    </div>
+  </div>
+
+  <script>
+    function maxTwo() {
+      const a = +document.getElementById("a1").value;
+      const b = +document.getElementById("a2").value;
+      document.getElementById("r1").textContent = "Их нь: " + Math.max(a, b);
+    }
+
+    function avgThree() {
+      const a = +document.getElementById("b1").value;
+      const b = +document.getElementById("b2").value;
+      const c = +document.getElementById("b3").value;
+      const avg = (a + b + c) / 3;
+      document.getElementById("r2").textContent = "Дундаж: " + avg.toFixed(2);
+    }
+
+    function checkPrime() {
+      const n = +document.getElementById("c1").value;
+      if (n < 2) return document.getElementById("r3").textContent = "Анхны тоо биш";
+      for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) return document.getElementById("r3").textContent = "Анхны тоо биш";
+      }
+      document.getElementById("r3").textContent = "Анхны тоо мөн";
+    }
+
+    function checkPalindrome() {
+      const n = document.getElementById("d1").value;
+      const reversed = n.split("").reverse().join("");
+      document.getElementById("r4").textContent =
+        (n === reversed) ? "Палиндром мөн" : "Палиндром биш";
+    }
+  </script>
+</body>
+</html>

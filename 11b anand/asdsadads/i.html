@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello Nest</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(17, 31, 226);
+      color: white;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .info-box {
+      width: 250px;
+      height: 120px;
+      background-color: antiquewhite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      color: black;
+      font-weight: bold;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 15px;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .b1 {
+      background-color: red;
+    }
+
+    .b2 {
+      background-color: aqua;
+    }
+
+    .b3 {
+      background-color: blueviolet;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello Nest</h1>
+
+  <div class="info-box" id="info">
+    <p>end medeelel grna</p>
+  </div>
+
+  <div class="button-group">
+    <button class="b1" id="text">Text өөрчлөх</button>
+    <button class="b2" id="addtxt">Text нэмэх</button>
+    <button class="b3" id="rmvetxt">Text хасах</button>
+  </div>
+
+
+
+  <script>
+  const infoBox = document.getElementById("info");
+  const textBtn = document.getElementById("text");
+  const addBtn = document.getElementById("addtxt");
+  const removeBtn = document.getElementById("rmvetxt");
+
+  textBtn.addEventListener("click", () => {
+    infoBox.innerHTML = "11b";
+  });
+
+  addBtn.addEventListener("click", () => {
+    const newPara = document.createElement("p");
+    newPara.textContent = "Нэмэлт текст нэмэгдлээ.";
+    infoBox.appendChild(newPara);
+  });
+
+
+  removeBtn.addEventListener("dblclick", () => {
+    infoBox.innerHTML = "";
+  });
+</script>
+
+</body>
+</html>
